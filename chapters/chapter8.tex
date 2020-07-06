@@ -1,0 +1,38 @@
+\chapter{Navigation Apps in a Complex System}
+The provision of network information has the potential to reduce travel time for individual drivers and consequently improving overall performance of a road network\cite{Chorus2006TravelReview}. But the effects of information inaccuracy remain in dispute as a decline in performance was noticed by Rapoport et al.\cite{Rapoport2014Pre-tripExperiment}, while Litescu et al.\cite{Litescu2016TheSystems} saw negligible effects and even suggested that system performance can sometimes benefit with lower precision information. The characteristics of presented information and the information dynamics manifested by state-of-the-art social navigation applications, and the route-choice behavior brought about by the presented information have shown varied effects in the overall performance of road networks. But more recently, the selfish and insensitive nature of such applications is seen to cause an increase in traffic on smaller capacity roads in suburban areas due to occasional disruptions and congestion trends\cite{Cabannes2018TheApproach}. In this work, an agent-based model was used to simulate the effects of having a certain percentage of drivers use and follow route recommendations from a navigation application. The percentage was progressively increased to observe effects on traffic patterns. This supports the phenomenon called Online Information Paradox\cite{Wijayaratna2017DoesParadox} in which the presentation of online information to drivers can deteriorate travel conditions for all users of the road network compared to when no information is provided. 
+
+Arguably, navigation applications are not operating in a vacuum and they not only benefit an individual user. As a sociotechnical system, it is part of a feedback loop. It adapts its recommendations based on the state of the road network, and as drivers try to follow one of its recommendations, it indirectly affects the future state of the road network. Currently, user and lab studies are primary methods in evaluating the usability and effectivity of HCI solution prototypes. However, in the case of sociotehcnical systems like social networking platforms, online communities, and navigation applications, there is a gap in evaluating how it affects the overall system and its stakeholders. In this chapter, I discuss how I designed an agent-based model that simulates a simple road network in which a certain percentage of the drivers are using navigation applications. I discuss how I incorporate the route choice and navigation behaviors found in previous chapters to evaluate how the deployment of such prototypes can have mesoscopic and macroscopic effects on the system. I then explain the emerging behaviors of the system after running various technology adoption scenarios.
+
+\section{Method}
+My goal is to understand how the number of drivers that use navigation applications affect the overall performance of a road network. In particular, I want to understand whether the suggestions of these navigation applications really bring their users to their destinations faster, and how does it affect the travel times of other drivers that do not use them at all. Here, I build a simple model of a road network with car agents that are either assisted by these applications or not. I will use NetLogo to create the model.
+
+\subsection{Agents}
+In this model, there will be 2 breeds of agents. The first breed are the car agents that drive around the world. The second breed are the traffic lights that give signals to these drivers.
+
+Car agents will have a property called “assisted?” which indicate whether it is assisted by a navigation app or not. They will also have the path property which indicates which path in the network they will use to get to the same destination. It will also have the properties speed and travel time that will be monitored and plotted later. 
+
+Traffic lights will have the properties “current signal,” “stop duration,” “go duration,” and “linked traffic light.”
+
+\subsection{Agent Behaviors}
+At the beginning, cars will be assigned if they are assisted or not. If they are not assisted, they will be randomly assigned a path to take. If they are assisted, they will always be assigned the fastest path. They will drive in the world following those paths and follow the signal from traffic lights. They will also follow a simple car following behavior to avoid collisions and maintain headway.
+
+Traffic lights will change signals depending on their stop and go durations. They will follow a fix interval and will not adjust their timings. 
+
+\subsection{Environment}
+The environment will be spatial. There will be patches that represent the road network and agents will drive on these patches. There will be at least 2 paths available in the toy network, with 1 being faster but with smaller capacity.
+
+\subsection{Model Design}
+In each time step, car agents will choose which way to go based on the path assigned to them. They will also decide how they will adjust their speed based on how far the car in front of them is. They will also decide what to do next based on the signal of the nearest traffic light.
+
+Traffic light agents will change their signals based on the set duration. They will also synchronize with their linked traffic lights.
+
+At the beginning, we have to define the number of car agents and fraction of car agents with navigation app. In the current version, we also have to define which road will be suggested to the drivers that use the navigation application.
+
+\section{Results}
+This is an ongoing study, which also depends on the results of Chapter 5.
+
+First, I will analyze the resulting travel time of the cars that use a navigation app. Are they faster compared to the non-assisted ones?
+
+From a macroscopic lens, I also want to analyze the average travel time of all car agents for the system-wide effects.
+
+Lastly, from a mesoscopic lens, I want to analyze the number of cars in each road segment at each tick to see if and when traffic congestion occurs.
