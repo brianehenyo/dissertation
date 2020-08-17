@@ -87,6 +87,9 @@
 \setCJKsansfont{IPAGothic}
 \setCJKmonofont{IPAGothic}
 
+\usepackage{booktabs}
+\usepackage{longtable}
+
 \defaultfontfeatures{Mapping=tex-text}
 \newfontfamily{\smallcaps}[RawFeature={+c2sc,+scmp}]{EB Garamond}
 \setromanfont[Numbers=OldStyle, Ligatures={Common, TeX}, Scale=1.0]{EB Garamond}

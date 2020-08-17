@@ -24,12 +24,12 @@
 	\input{frontmatter/personalize}
 	\maketitle
 	\copyrightpage
-	\abstractpage
-	\tableofcontents
-	\listoffigures % optional
-	\publist
 	\dedicationpage
 	\acknowledgments
+	\abstractpage
+	\publist
+	\tableofcontents
+	\listoffigures
 }
 
 \renewcommand{\maketitle}{
@@ -43,15 +43,14 @@
 	\vspace{100pt}
 	A Dissertation\\ 
 	\vspace{12pt}
-	presented by\\ \textsc{\theauthor}\\ 
+	presented by\\ \large \textsc{\theauthor}\\ 
 	\vspace{12pt}
-	to the\\ \textsc{\@department}\\
+	\normalsize to the\\ \large \textsc{\@department}\\
 	\vspace{12pt}
-	in partial fulfillment of the requirements\\
-	for the degree of\\ 
-	\textsc{\@degree}\\
+	\normalsize in partial fulfillment of the requirements for the degree of\\ 
+	\large \textsc{\@degree}\\
 	\vspace{12pt}
-	\textsc{\@university}\\ \@universitycity, \@universitystate\\
+	\textsc{\@university}\\ \normalsize \@universitycity, \@universitystate\\
 	\@degreemonth\ \@degreeyear
 	\end{center} \vspace*{\fill}
 }

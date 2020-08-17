@@ -1,16 +1,86 @@
-\chapter{Some extra stuff}
+\chapter{Route Choice GEE Model}
 \label{AppendixA}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.
+This is the fitted GEE model for the route choice task discussed in Chapter 4. The following tables show the coefficients and odd ratios for the different main and interaction effects.
 
-Quisque facilisis erat a dui. Nam malesuada ornare dolor. Cras gravida, diam sit amet rhoncus ornare, erat elit consectetuer erat, id egestas pede nibh eget odio. Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis. Fusce et ipsum et nulla tristique facilisis. Donec eget sem sit amet ligula viverra gravida. Etiam vehicula urna vel turpis. Suspendisse sagittis ante a urna. Morbi a est quis orci consequat rutrum. Nullam egestas feugiat felis. Integer adipiscing semper ligula. Nunc molestie, nisl sit amet cursus convallis, sapien lectus pretium metus, vitae pretium enim wisi id lectus. Donec vestibulum. Etiam vel nibh. Nulla facilisi. Mauris pharetra. Donec augue. Fusce ultrices, neque id dignissim ultrices, tellus mauris dictum elit, vel lacinia enim metus eu nunc.
+\begin{table}[t]
+    \caption{Results of the GEE model with main and interaction effects. Significant results are highlighted in bold.}
+	\label{tab:s3-gee}
+	\centering
+	\begin{tabular}{llllll}
+        \hline\hline
+        Variable Name & Estimate & SE & Wald & Pr(\textgreater{}|W|) & \\
+        \hline
+        \textbf{(Intercept)} & \textbf{-1.7918} & \textbf{0.5401} & \textbf{11.01} & \textbf{0.00091} & \textbf{***} \\
+        H2W & 0.4925 & 0.6020 & 0.67 & 0.41330 & \\
+        W2F & -0.3285 & 0.8708 & 0.14 & 0.70600 & \\
+        H2F & 0.6931 & 0.6944 & 1.00 & 0.31816 & \\
+        & & & & & \\
+        \textbf{Valence} & \textbf{1.2040} & \textbf{0.5519} & \textbf{4.76} & \textbf{0.02916} & \textbf{*}  \\
+        \textbf{Framing} & \textbf{1.3564} & \textbf{0.4788} & \textbf{8.02} & \textbf{0.00461} & \textbf{**} \\ 
+        & & & & & \\
+        Road Names & 0.6931 & 0.5098 & 1.85 & 0.17396 & \\
+        & & & & & \\
+        H2W * Valence & -1.2040 & 0.6470 & 3.46 & 0.06277 & . \\
+        W2F * Valence & -0.3830 & 0.8399 & 0.21 & 0.64839 & \\
+        H2F * Valence & -1.4046 & 0.7396 & 3.61 & 0.05753 & . \\
+        \textbf{H2W * Framing} & \textbf{-1.1558} & \textbf{0.4741} & \textbf{5.94} & \textbf{0.01477} & \textbf{*}  \\
+        W2F * Framing & -0.5355 & 0.9164 & 0.34 & 0.55899 & \\
+        \textbf{H2F * Framing} & \textbf{-1.1741} & \textbf{0.5807} & \textbf{4.09} & \textbf{0.04317} & \textbf{*}  \\
+        H2W * Road Names & -0.9199 & 0.5431 & 2.87 & 0.09030 & . \\
+        W2F * Road Names & -0.0989 & 1.1266 & 0.01 & 0.93002 & \\
+        H2F * Road Names & -0.6931 & 0.6660 & 1.08 & 0.29801 & \\
+        & & & & & \\
+        Valence * Road Names & -1.0217 & 0.5960 & 2.94 & 0.08651 & . \\
+        \textbf{Framing * Road Names} & \textbf{-1.1741} & \textbf{0.5501} & \textbf{4.56}  & \textbf{0.03280} & \textbf{*}   \\
+        & & & & & \\
+        H2W * Valence * Road Names & 1.6314 & 0.8755 & 3.47 & 0.06239 & . \\
+        W2F * Valence * Road Names & 0.6281 & 1.1721 & 0.29 & 0.59205 & \\
+        H2F * Valence * Road Names & 1.5737 & 0.8973 & 3.08 & 0.07947 & . \\
+        \textbf{H2W * Framing * Road Names} & \textbf{1.5832} & \textbf{0.6418} & \textbf{6.08}  & \textbf{0.01363} & \textbf{*}   \\
+        W2F * Framing * Road Names & 0.0874 & 1.0519 & 0.01 & 0.93375 & \\
+        H2F * Framing * Road Names & 1.1741 & 0.7394 & 2.52 & 0.11230 & \\
+        \hline
+    \end{tabular}
+\end{table}
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis.
-
-Cras sed ante. Phasellus in massa. Curabitur dolor eros, gravida et, hendrerit ac, cursus non, massa. Aliquam lorem. In hac habitasse platea dictumst. Cras eu mauris. Quisque lacus. Donec ipsum. Nullam vitae sem at nunc pharetra ultricies. Vivamus elit eros, ullamcorper a, adipiscing sit amet, porttitor ut, nibh. Maecenas adipiscing mollis massa. Nunc ut dui eget nulla venenatis aliquet. Sed luctus posuere justo. Cras vehicula varius turpis. Vivamus eros metus, tristique sit amet, molestie dignissim, malesuada et, urna.
-
-Cras dictum. Maecenas ut turpis. In vitae erat ac orci dignissim eleifend. Nunc quis justo. Sed vel ipsum in purus tincidunt pharetra. Sed pulvinar, felis id consectetuer malesuada, enim nisl mattis elit, a facilisis tortor nibh quis leo. Sed augue lacus, pretium vitae, molestie eget, rhoncus quis, elit. Donec in augue. Fusce orci wisi, ornare id, mollis vel, lacinia vel, massa.
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.
-
-Quisque facilisis erat a dui. Nam malesuada ornare dolor. Cras gravida, diam sit amet rhoncus ornare, erat elit consectetuer erat, id egestas pede nibh eget odio. Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis. Fusce et ipsum et nulla tristique facilisis. Donec eget sem sit amet ligula viverra gravida. Etiam vehicula urna vel turpis. Suspendisse sagittis ante a urna. Morbi a est quis orci consequat rutrum. Nullam egestas feugiat felis. Integer adipiscing semper ligula. Nunc molestie, nisl sit amet cursus convallis, sapien lectus pretium metus, vitae pretium enim wisi id lectus. Donec vestibulum. Etiam vel nibh. Nulla facilisi. Mauris pharetra. Donec augue. Fusce ultrices, neque id dignissim ultrices, tellus mauris dictum elit, vel lacinia enim metus eu nunc.
+\begin{table}[t]
+    \caption{Odd ratios of the main and interaction effects from the GEE model. Odd ratios for significant main and interaction effects are highlighted in bold.}
+	\label{tab:s3-gee-or}
+	\centering
+	\begin{tabular}{llll}
+        \hline\hline
+        Variable Name & Odd Ratio & OR Lower CI & OR Upper CI \\
+        \hline
+        \textbf{(Intercept)} & \textbf{0.167} & \textbf{0.0578} & \textbf{0.480} \\
+        H2W & 1.636 & 0.5029 & 5.325 \\
+        W2F & 0.720 & 0.1306 & 3.968 \\
+        H2F & 2.000 & 0.5128 & 7.800 \\
+        & & & \\
+        \textbf{Valence} & \textbf{3.333} & \textbf{1.1300} & \textbf{9.833}  \\
+        \textbf{Framing} & \textbf{3.882} & \textbf{1.5188} & \textbf{9.924} \\ 
+        & & & \\
+        Road Names 2.000 & 0.7363 & 5.432 \\
+        & & & \\
+        H2W * Valence & 0.300 & 0.0844 & 1.066 \\
+        W2F * Valence & 0.682 & 0.1314 & 3.537 \\
+        H2F * Valence & 0.245 & 0.0576 & 1.046 \\
+        \textbf{H2W * Framing} & \textbf{0.315} & \textbf{0.1243} & \textbf{0.797}  \\
+        W2F * Framing & 0.585 & 0.0972 & 3.527 \\
+        \textbf{H2F * Framing} & \textbf{0.309} & \textbf{0.0990} & \textbf{0.965}  \\
+        H2W * Road Names & 0.399 & 0.1375 & 1.156 \\
+        W2F * Road Names & 0.906 & 0.0996 & 8.241 \\
+        H2F * Road Names & 0.500 & 0.1355 & 1.845 \\
+        & & & \\
+        Valence * Road Names & 0.360 & 0.1119 & 1.158 \\
+        \textbf{Framing * Road Names} & \textbf{0.309} & \textbf{0.1052} & \textbf{0.908}   \\
+        & & & \\
+        H2W * Valence * Road Names & 5.111 & 0.9190 & 28.425 \\
+        W2F * Valence * Road Names & 1.874 & 0.1884 & 18.643 \\
+        H2F * Valence * Road Names & 4.825 & 0.8311 & 28.008 \\
+        \textbf{H2W * Framing * Road Names} & \textbf{4.871} & \textbf{1.3844} & \textbf{17.136}   \\
+        W2F * Framing * Road Names & 1.091 & 0.1389 & 8.577 \\
+        H2F * Framing * Road Names & 3.235 & 0.7595 & 13.782 \\
+        \hline
+    \end{tabular}
+\end{table}
